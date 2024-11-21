@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerplate") -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnQuest</title>
+</head>
+<body>
+    <div class="row">
+    <div class="col-8 offset-2">
+    <h3>Create a new List</h3>
+    <form method="POST" 
+    action="/listings" 
+     class="needs-validation" 
+     enctype="multipart/form-data"> 
+        <div class="mb-3">
+            <lable for="title"class="form-lable">Title</lable>
+            <input 
+            name ="listing[title]"
+            placeholder="Add a catchy  title" 
+            class="form-control"
+            required
+            /> 
+            <div class="valid-feedback">Title looks good!</div> 
+        </div>
+    <div class="mb-3">
+    <lable for="description"class="form-lable">Description</lable> 
+     <textarea 
+     name ="listing[description]" 
+     class="form-control"
+     required
+     >
+    </textarea>
+    </div>
+        
+    
+
+  <div class="mb-3">
+    <lable for="Image"class="form-lable"> Upload Image</lable>    
+    <input name ="listing[image]" 
+     class="form-control"
+     type = 'file'
+     >
+     </div>
+
+  <div class="row">
+  <div class="mb-3 col-md-4" >
+    <lable for="Price"class="form-lable">Price</lable> 
+    <input name ="listing[price]" 
+     type = "number"
+    class="form-control"
+    placeholder="1200"
+    required
+    >
+    </div>
+
+    <div class="mb-3 col-md-8" >
+        <lable for="Country"class="form-lable">Country</lable>    
+        <input
+         name="listing[country]"
+         class="form-control"
+         placeholder="India"
+         required
+         >
+    </div>
+</div>
+    <div class="mb-3">
+        <lable for="Location"class="form-lable">Loaction</lable>    
+        <input
+         name ="listing[location]"
+        class="form-control"
+        placeholder="Hyderabad,Telanagana"
+        required
+        >
+      </div>
+         <button class="btn btn-dark add-btn">Add</button><br>
+         <br>
+    </form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<% layout("/layouts/boilerplate") -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnQuest</title>
+</head>
+<body>
+    <h3>Edit List</h3>
+    <form method="POST" action="/listings/<%=listing._id %>?_method=PUT" enctype="multipart/form-data"> 
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name ="listing[title]" value="<%=listing.title %>" class="form-control">
+        </div>
+        <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <textarea name ="listing[description]" value="<%=listing.description %>" class="form-control"></textarea>
+       </div>
+       <div class="mb-3">
+        <label for="Price" class="form-label">Price</label>
+        <input name ="listing[price]" value="<%=listing.price %>" type = "number" class="form-control">
+       </div>
+        
+       <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input name ="listing[image]" 
+        type="file",
+        class="form-control"
+        >
+       </div>
+       <div class="mb-3">
+        <label for="Location" class="form-label">Location</label>
+        <input name ="listing[location]"value="<%=listing.location %>" class="form-control">
+       </div>
+         <div class="mb-3">
+            <label for="Country" class="form-label">Country</label>
+            <input name="listing[country]" value="<%=listing.country %> "class="form-control">
+         </div>
+         
+         <button class="btn btn-dark add-btn">Edit</button>
+        </form>
+         <br><br>
+</body>
+</html>
