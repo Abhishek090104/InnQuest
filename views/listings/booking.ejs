@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnQuest</title>
+</head>
+<body>
+    <h1>Book <%= listing.title %></h1>
+    <form action="/listings/<%= listing._id %>/book" method="POST">
+        <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required class="form-control">
+    </div>
+        <button type="submit" class="btn btn-dark add-btn">Confirm Booking</button>
+    </form>
+</body>
+</html>
