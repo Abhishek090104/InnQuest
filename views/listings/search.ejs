@@ -23,5 +23,36 @@
   <% } else { %>
     <p>No listings found for "<%= country %>".</p>
   <% } %>
+
+
+  
+<div>
+  <button id="useAiBtn" class="btn btn-primary">Use AI</button>
+  
+  
+  <form id="aiForm" style="display: none;" method="POST" action="/get-ai-suggestions">
+    <div class="mb-3">
+      <label for="userInput" class="form-label">Tell us what you like:</label>
+      <textarea
+        class="form-control"
+        id="userInput"
+        name="userInput"
+        rows="3"
+        placeholder="E.g., I want to visit historical places with good weather..."
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Get Suggestions</button>
+  </form>
+</div>
+
+<script>
+  // Toggle form visibility
+  document.getElementById('useAiBtn').addEventListener('click', function () {
+    const form = document.getElementById('aiForm');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  });
+</script>
+
 </body>
 
