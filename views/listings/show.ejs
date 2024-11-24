@@ -14,10 +14,15 @@
        &#8377; <%= listing.price?listing.price.toLocaleString("en-IN") : "N/A" %> <br>
         <%= listing.location %> <br>
         <%= listing.country %> <br>
+        
   </p>
   </div>
  </div>
-   
+ <form >
+    <a href="/listings/<%= listing._id %>/booking" class="btn btn-dark col-1 offset-2 add-btn">BookNow</a>
+  </form>
+ <br>
+ <br>
     <br/>
 
     <% if(currUser&&currUser._id.equals(listing.owner._id)){ %>
